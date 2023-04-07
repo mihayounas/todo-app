@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import styles from "../styles/ToDoForm.module.css"
+import styles from "../styles/ToDoForm.module.css";
+import ToDoList from "./ToDoList";
 
 function TodoForm({ addTodo }) {
-    const [text, setText] = useState("");
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      if (!text) return;
-      addTodo(text);
-      setText("");
-    };
-  
-    return (
-        <form className={styles["todo-form"]} onSubmit={handleSubmit}>
+  const [text, setText] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!text) return;
+    addTodo(text);
+    setText("");
+  };
+
+  return (
+    <>
+      <form className={styles["todo-form"]} onSubmit={handleSubmit}>
         <label htmlFor="todo-input">Add a Task</label>
         <input
           type="text"
@@ -26,8 +28,7 @@ function TodoForm({ addTodo }) {
           Add Task
         </button>
       </form>
-      
-    );
-  }
-  
+    </>
+  );
+}
   export default TodoForm;

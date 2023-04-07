@@ -2,7 +2,7 @@ import React from 'react'
 
 function ToDoList() {
   return (
-    <div>ToDoList</div>
+    <div><p>ToDoList</p></div>
   )
 }
 
